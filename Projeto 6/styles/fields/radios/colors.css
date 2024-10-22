@@ -1,0 +1,45 @@
+input[type="radio"] {
+  all: unset;
+}
+
+.customization {
+  .colors {
+    .radio-inner {
+      display: flex;
+      gap: 1.2rem;
+      margin-top: 2.2rem;
+
+      label {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 4rem;
+        height: 4rem;
+
+        background-color: var(--shape-button);
+
+        border-radius: 50%;
+        padding: 0.6rem;
+
+        --bg-color-radio: var(--brand-light);
+
+        input {
+          height: 2.8rem;
+          flex: 1 0 0;
+          background-color: var(--bg-color-radio);
+          border-radius: 50%;
+        }
+
+        &:hover {
+          background-color: var(--shape-hover);
+        }
+
+        &:focus-within,
+        &:focus {
+          outline: 2px solid var(--brand-light);
+        }
+      }
+    }
+  }
+}

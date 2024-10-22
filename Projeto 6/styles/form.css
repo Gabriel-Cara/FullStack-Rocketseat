@@ -1,0 +1,62 @@
+@import url(fields/index.css);
+
+form {
+  margin-top: 4.2rem;
+}
+
+fieldset {
+  border: none;
+
+  &.about {
+    --icon-title: url(../assets/icons/calendar.svg);
+  }
+
+  &.customization {
+    --icon-title: url(../assets/icons/paintbrush.svg);
+  }
+
+  &.contact {
+    --icon-title: url(../assets/icons/contact.svg);
+  }
+}
+
+fieldset + fieldset {
+  margin-top: 4.8rem;
+}
+
+legend {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+
+  margin-bottom: 2.6rem;
+
+    &::before {
+    content: "";
+    display: block;
+    width: 2.4rem;
+    height: 2.4rem;
+    background: var(--icon-title) no-repeat center/cover;
+  }
+}
+
+button {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+
+  color: var(--text-title);
+  font: var(--text-md);
+  font-weight: 600;
+  
+  background-color: var(--brand-dark);
+  border: none;
+  border-radius: .8rem;
+
+  padding: 1.2rem 2rem;
+  margin-left: auto;
+
+  &:hover {
+    background-color: var(--brand-mid);
+  }
+}
