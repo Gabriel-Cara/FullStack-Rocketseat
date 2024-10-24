@@ -47,3 +47,13 @@ a:hover {
 .bg-surface-color {
   background-color: var(--surface-color);
 }
+
+.desktop-only {
+  display: none;
+}
+
+@media (width >= 48em) {
+  .desktop-only {
+    display: initial;
+  }
+}

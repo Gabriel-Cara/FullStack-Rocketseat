@@ -5,22 +5,19 @@ header {
 
 header .container {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  gap: 32px;
 }
 
 header #profile {
   display: flex;
-  gap: 32px;
-}
-
-header #profile > div {
-  max-width: 384px;
+  flex-direction: column;
+  gap: 16px;
 }
 
 header #profile img {
-  width: 176px;
-  height: 176px;
+  width: 120px;
+  height: 120px;
   object-fit: cover;
   border-radius: 50%;
 }
@@ -45,4 +42,26 @@ header #profile h1 {
   display: flex;
   align-items: center;
   gap: 8px;
+}
+
+@media (width >= 768px) {
+  header .container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  header #profile {
+    flex-direction: row;
+    gap: 32px;
+  }
+
+  header #profile > div {
+    max-width: 384px;
+  }
+
+  header #profile img {
+    width: 176px;
+    height: 176px;
+  }
 }
