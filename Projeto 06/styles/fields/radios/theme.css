@@ -1,0 +1,46 @@
+input[type="radio"] {
+  all: unset;
+}
+
+.customization {
+  .theme {
+    margin-top: 2.8rem;
+
+
+    .radio-inner {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(23rem, 1fr));
+      gap: .8rem;
+
+      label {
+        width: 100%;
+
+        display: grid;
+        place-items: center;
+        gap: .8rem;
+
+        color: var(--text-title);
+        
+        background-color: var(--shape-button);
+        border-radius: .8rem;
+
+        padding: .4rem .4rem .8rem;
+
+        transition: ease-in background-color .2s;
+
+        img {
+          width: 100%;
+        }
+
+        &:hover {
+          background-color: var(--shape-hover);
+        }
+
+        &:focus,
+        &:focus-within {
+          outline: 2px solid var(--brand-light);
+        }
+      }
+    }
+  }
+}
