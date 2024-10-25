@@ -6,6 +6,9 @@
     align-items: center;
     gap: 8px;
 
+    strong {
+      display: none;
+    }
   }
 
   /* nesting css */
@@ -23,4 +26,19 @@
   border: solid 1px var(--stroke-color);
   border-inline: none;
   justify-content: space-between;
+  
+  overflow-x: scroll;
+  align-items: center;
+
+  gap: 32px;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media (width >= 768px) {
+  #primary div strong {
+    display: block;
+  }
 }

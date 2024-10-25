@@ -6,14 +6,14 @@
 }
 
 :root {
-  --brand-color-light: #60A5FA;
-  --brand-color-dark: #1D4ED8;
-  --bg-color: #0F172A;
-  --stroke-color: #1E293B;
-  --text-color-primary: #F1F5F9;
-  --text-color-secondary: #CBD5E1;
+  --brand-color-light: #60a5fa;
+  --brand-color-dark: #1d4ed8;
+  --bg-color: #0f172a;
+  --stroke-color: #1e293b;
+  --text-color-primary: #f1f5f9;
+  --text-color-secondary: #cbd5e1;
 
-  --font-family: 'Archivo', sans-serif;
+  --font-family: "Archivo", sans-serif;
   --h1: 800 24px/135% var(--font-family);
   --h2: 800 16px/140% var(--font-family);
   --h3: 800 14px/140% var(--font-family);
@@ -37,7 +37,9 @@ a:hover {
   color: var(--brand-color-light);
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font: inherit;
 }
 
@@ -55,15 +57,24 @@ main {
   margin-block: 40px;
   row-gap: 80px;
   column-gap: 32px;
-
   grid-template-columns: 2fr 1.4fr;
 
-  grid-template-areas: 
-  "featured featured"
-  "weekly weekly"
-  "ai aside";
-}
+  grid-template-areas:
+    "featured featured"
+    "weekly weekly"
+    "ai aside";
 
+  @media (width <= 1024px) {
+    grid-template-rows: auto;
+    grid-template-columns: 1fr;
+
+    grid-template-areas: 
+      "featured"
+      "weekly"
+      "ai"
+      "aside";
+  }
+}
 .content-tag {
   display: inline-block;
   background-color: var(--brand-color-dark);
@@ -71,7 +82,7 @@ main {
   border-radius: 4px;
   font: 500 10px/1.2 var(--font-family);
   text-transform: uppercase;
-  letter-spacing: .04em;
+  letter-spacing: 0.04em;
   color: var(--text-color-primary);
   box-shadow: 0px 4px 16px rgba(2, 6, 23, 0.25);
 }
