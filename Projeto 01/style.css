@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+  font-family: "Open Sans", sans-serif;
+
+  --background-default: #f5f4f0;
+  --border-primary: #d9d9d9;
+
+  --text-primary: #1b1b1b;
+  --text-secondary: #333333;
+  --text-tertiary: #696969;
+  --text-headline: #e1624f;
+
+  --accent-blue: #0c51a7;
+  --accent-orange: #e95e10;
+  --accent-pink: #e5245e;
+  --accent-purple: #591b98;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 3.6rem;
+}
+
+h2 {
+  font-size: 3.2rem;
+}
+
+h3 {
+  font-size: 2.8rem;
+}
+
+p, span, li, a  {
+  color: var(--text-secondary);
+  font-size: 1.6rem;
+}
+
+span, li {
+  font-weight: 700;
+}
+
+img {
+  width: 100%;
+  border-radius: 2.8rem;
+  object-fit: cover;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--border-primary);
+  margin-block: 4rem;
+}
+
+#app {
+  margin: 8.8rem 8rem;
+}
+
+.title span {
+  color: var(--text-headline);
+  text-transform: uppercase;
+}
+
+.title p {
+  margin-top: .8rem;
+}
+
+.description {
+  margin-block: 4rem;
+}
+
+p.subtitle {
+  text-align: center;
+  font-style: italic;
+
+  margin-top: 2.4rem;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 4.8rem;
+}
+
+.list .title {
+  margin-block: 6.4rem;
+}
+
+.card img {
+  max-height: 35rem;
+}
+
+.content {
+  margin-top: 2rem;
+}
+
+.content span {
+  display: block;
+  margin-top: 2rem;
+}
+
+ul li {
+  margin-left: 2rem;
+}
+
+ul li::marker {
+  color: var(--text-secondary);
+}
+
+ul li.history {
+  color: var(--accent-blue);
+}
+
+ul li.couple {
+  color: var(--accent-purple);
+}
+
+ul li.family {
+  color: var(--accent-pink);
+}
+
+ul li.budge {
+  color: var(--accent-orange);
+}
+
+.conclusion {
+  text-align: center;
+}
+
+footer p {
+  font-family: "Alice", serif;
+  text-align: center;
+  
+  margin-top: 6.5rem;
+}
+
+footer p a:hover {
+  transition: .3s;
+  background-color: var(--background-default);
+  padding: .4rem;
+  border-radius: .8rem;
+  color: var(--accent-orange);
+}
