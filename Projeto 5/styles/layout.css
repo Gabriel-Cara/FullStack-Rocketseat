@@ -4,6 +4,11 @@
 
   height: 100vh;
   overflow: hidden;
+
+  @media (width <= 768px) {
+    display: flex;
+    flex-direction: column-reverse;
+  }
 }
 
 main {
@@ -47,5 +52,24 @@ aside {
     span {
       color: var(--text-highlight);
     }
+
+  @media (width <= 768px) {
+    padding: 1.5rem;
+
+    .aside-container {
+      margin-inline: auto;
+      
+      & header {
+        p, h2 {
+          display: none;
+        }
+
+        img {
+          display: block;
+          margin-inline: auto;
+        }
+      }
+    }
+  }
   }
 }
