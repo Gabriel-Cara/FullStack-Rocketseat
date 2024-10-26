@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Quicklist</title>
+    <link rel="shortcut icon" href="assets/logo-icon.svg" type="image/x-icon" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/index.css" />
+  </head>
+  <body>
+    <div id="app">
+      <img src="assets/logo.svg" alt="" />
+
+      <div class="content">
+        <img src="assets/icons/arrow-left.svg" alt="" />
+
+        <h1>Compras da semana</h1>
+
+        <form>
+          <input
+            type="text"
+            id="item"
+            class="item"
+            placeholder="Adicione um novo item"
+          />
+          <button id="btn-add">Adicionar item</button>
+        </form>
+
+        <ul class="list">
+          <li class="item">
+            <label class="checkbox-container">
+              <input class="custom-checkbox" type="checkbox">
+              <span class="checkmark"></span>
+            </label>
+            <p>Pão de forma</p>
+            <img class="btn-delete" src="assets/icons/trash.svg" alt="" />
+          </li>
+
+          <li class="item">
+            <label class="checkbox-container">
+              <input class="custom-checkbox" type="checkbox">
+              <span class="checkmark"></span>
+            </label>
+            <p>Café Preto</p>
+            <img class="btn-delete" src="assets/icons/trash.svg" alt="" />
+          </li>
+
+          <li class="item">
+            <label class="checkbox-container">
+              <input class="custom-checkbox" type="checkbox">
+              <span class="checkmark"></span>
+            </label>
+            <p>Suco de laranja</p>
+            <img class="btn-delete" src="assets/icons/trash.svg" alt="" />
+          </li>
+
+          <li class="item">
+            <label class="checkbox-container">
+              <input class="custom-checkbox" type="checkbox">
+              <span class="checkmark"></span>
+            </label>
+            <p>Bolacha</p>
+            <img class="btn-delete" src="assets/icons/trash.svg" alt="" />
+          </li>
+        </ul>
+
+        <div class="deleted hide">
+          <img src="assets/icons/warning.svg" alt="">            
+          <p>O item foi removido da lista</p>
+          <button id="btn-close">
+            <img src="assets/icons/delete.svg" alt="">
+          </button>
+        </div>
+
+        <div class="added hide">
+          <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="1" y="1" width="15" height="15" rx="5.5" fill="#fff"/>
+            <rect x="1" y="1" width="15" height="15" rx="5.5" stroke="#fff"/>
+            <path d="M5 9.5L6.75 11.25L12 5.75" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+            
+          <p>O item foi adicionado a lista</p>
+          <button id="btn-close">
+            <img src="assets/icons/delete.svg" alt="">
+          </button>
+        </div>
+    </div>
+
+    <script src="scripts/index.js"></script>
+  </body>
+</html>
