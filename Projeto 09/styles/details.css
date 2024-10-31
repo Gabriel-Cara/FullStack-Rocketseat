@@ -1,0 +1,110 @@
+#details {
+  max-width: 100%;
+  background-color: var(--shape-background);
+  padding-block: 6rem 5rem;
+
+  & .subtitle {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 7.125rem 2rem;
+
+    font: var(--fw-md) var(--fs-title-sm)/125% var(--ff-base);
+    color: var(--text-body);
+
+    & p {
+      opacity: .5;
+      text-align: center;
+    }
+
+    & img {
+      position: absolute;
+      transform: scale(0);
+      transition: transform .5s ease;
+    }
+
+    & img:hover {
+      transform: scale(2);
+    }
+
+    & .book {
+      top: 0;
+    }
+
+    & .ouija {
+      bottom: 0;
+      left: 0;
+    }
+
+    & .ball {
+      bottom: 0;
+      right: 0;
+    }
+
+  }
+
+  & .subtitle:hover {
+
+    & .book {
+      animation: grow .5s ease-in both;
+    }
+    
+    & .ouija {
+      animation: grow .5s ease-in both;
+      animation-delay: .5s;
+    }
+
+    & .ball {
+      animation: grow .5s ease-in both;
+      animation-delay: 1s;
+    }
+
+    & .first {
+      animation: bright .5s ease-in both;
+
+      & strong {
+        color: var(--blue-light);
+      }
+    }
+
+    & .second {
+      animation: bright .5s ease-in both;
+      animation-delay: .5s;
+
+      & strong {
+        color: var(--blue-light);
+      }
+    }
+
+    & .third {
+      animation: bright .5s ease-in both;
+      animation-delay: 1s;
+
+      & strong {
+        color: var(--blue-light);
+      }
+    }
+  }
+
+  @media (width < 768px) {
+    & .subtitle {
+      & .book {
+        right: 20%;
+      }
+    }
+  }
+}
+
+@keyframes bright {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes grow {
+  to {
+    transform: scale(1);
+  }
+}

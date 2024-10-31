@@ -1,0 +1,79 @@
+#hero {
+  padding-block: 3.5rem 30rem;
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+  background-color: var(--shape-background);
+  z-index: 1;
+  height: 100vh;
+  
+  &::before {
+    content: "";
+    position: absolute;
+    background: url(../assets/images/hero/hero-background.svg) no-repeat bottom center / cover;
+    inset: 0;
+    z-index: -1;
+
+    animation: appear 1.5s linear both;
+  }
+
+
+  & nav {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    & .btn {
+      padding: 0.75rem 1.25rem;
+
+      &:hover {
+        &::before {
+          width: 140%;
+          height: 200%;
+          z-index: 1;
+        }
+      }
+    }
+  }
+
+
+  & .title {
+    max-width: 41rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 10rem;
+    margin-inline: auto;
+
+    text-align: center;
+
+    animation: appear 1.5s linear both;
+
+    & p {
+      font: var(--fw-base) var(--fs-text-lg)/1rem var(--ff-base);
+      color: var(--text-body);
+    }
+  }
+
+  @media (width < 768px) {
+    padding-block: 1.25rem 12rem;
+    height: 60vh;
+
+    & .title {
+      margin-top: 3rem;
+    }
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

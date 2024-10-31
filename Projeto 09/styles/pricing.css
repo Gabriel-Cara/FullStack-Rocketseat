@@ -1,0 +1,204 @@
+#pricing {
+  padding-block: 6.25rem 18.25rem;
+  background: url(../assets/images/pricing/pricing-background.svg)
+    var(--shape-background) center / cover no-repeat;
+
+  & h2 {
+    text-align: center;
+    margin-bottom: 7rem;
+  }
+
+  & .cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+    position: relative;
+
+    animation: rotate 0.5s linear both;
+    animation-timeline: view();
+    animation-range: 10% 50%;
+
+    & .card {
+      padding: 2rem 2rem 1.75rem;
+      min-height: 27rem;
+
+      display: flex;
+      flex-direction: column;
+
+      background-color: var(--shape-base);
+      border-radius: 1.5rem;
+      border: 1px solid var(--shape-stroke);
+
+      position: relative;
+
+      & > img {
+        position: absolute;
+      }
+
+      & > span {
+        font: var(--fw-bold) var(--fs-text-md) / 120% var(--ff-base);
+        color: var(--blue-light);
+      }
+
+      & pricing {
+        margin-top: 1.5rem;
+
+        & small {
+          font-size: var(--fs-text-md);
+        }
+      }
+
+      & p {
+        margin-top: 0.5rem;
+
+        font: var(--fw-base) var(--fs-text-sm) / 140% var(--ff-base);
+        color: var(--text-label);
+      }
+
+      & ul {
+        margin-top: auto;
+        list-style: none;
+
+        & li {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          gap: 0.5rem;
+
+          font: var(--fw-base) var(--fs-text-sm) / 140% var(--ff-base);
+          color: var(--text-body);
+
+          & marklist {
+            & svg {
+              width: 0.875rem;
+              height: 0.875rem;
+
+              & path {
+                fill: var(--blue-base);
+                filter: drop-shadow(0px 0px 12px rgba(136, 47, 151, 0.35));
+              }
+            }
+          }
+        }
+
+        & li + li {
+          margin-top: 0.75rem;
+        }
+      }
+
+      & .btn {
+        margin-top: 1.5rem;
+        padding: 0.75rem 1.25rem;
+
+        &:hover {
+          &::before {
+            width: 140%;
+            height: 200%;
+            z-index: 1;
+          }
+        }
+      }
+    }
+
+    & .card-primary {
+      position: relative;
+
+      & header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        & span {
+          color: var(--pink-light);
+          font-weight: bold;
+          position: relative;
+        }
+
+        & tag {
+          padding: 0.5625rem 1.25rem;
+          background: var(--shape-stroke);
+          border-radius: 999px;
+
+          color: var(--text-body);
+          font: var(--fw-bold) 0.625rem/120% var(--ff-base);
+          letter-spacing: 0.5px;
+
+          text-transform: uppercase;
+        }
+      }
+
+      & ul li marklist svg path {
+        fill: var(--pink-base);
+      }
+    }
+
+    & .card:not(.card-primary) {
+      position: absolute;
+      z-index: -1;
+    }
+  }
+
+  & .card:not(.card-primary) {
+    animation: rotate 0.5s ease-in-out both;
+    animation-timeline: view();
+    animation-range: 20% 50%;
+
+    transition: transform 0.3s linear, background-color 0.6s linear,
+      z-index 0.1s linear, box-shadow 0.5s linear;
+  }
+
+  & .card:hover {
+    transform: translateY(-2%);
+    background-color: var(--shape-hover);
+    box-shadow: 0px 0px 66px 0px rgba(53, 139, 185, 0.1);
+    z-index: 10;
+
+    transition: transform 0.3s linear, background-color 0.6s linear,
+      z-index 0.1s linear, box-shadow 0.5s linear;
+  }
+
+  @media (width <= 1168px) {
+    & .cards {
+      animation: none;
+      animation-timeline: none;
+
+      overflow-x: scroll;
+
+      justify-content: flex-start;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      min-height: max-content;
+
+      & .card {
+        animation: none;
+        animation-timeline: none;
+
+        & > img {
+          display: none;
+        }
+
+        &:not(.card-primary) {
+          position: relative;
+          z-index: 1;
+        }
+      }
+    }
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0) translate(0);
+    z-index: -1;
+  }
+
+  100% {
+    transform: rotate(var(--rotate)) translate(var(--x), var(--y));
+    z-index: 6;
+  }
+}
