@@ -1,0 +1,5 @@
+{
+  "scripts": {
+    "server": "json-server --watch server.json --port 3000"
+  }
+}

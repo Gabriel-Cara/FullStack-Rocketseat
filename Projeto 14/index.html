@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <!-- Link Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Logistics Control</title>
+    <link rel="icon" href="src/assets/logo-icon.svg" type="image/svg+xml">
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@700&family=Inter:opsz,wght@14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="src/styles/index.css" />
+
+    <script src="src/js/main.js" defer type="module"></script>
+  </head>
+  <body>
+    <img src="src/assets/logo.svg" class="logo" alt="Logomarca Mundo Pet" />
+    <main id="app">
+      <header>
+        <div class="text">
+          <h1>Encomendas</h1>
+          <p>
+            Aqui você pode ver todos as encomendas que estão cadastradas e que foram retiradas.
+          </p>
+        </div>
+
+        <div for="date-filter" class="input-wrapper">
+          <input type="date" id="date-filter" />
+        </div>
+      </header>
+
+      <aside id="order">
+        <section class="order-type">
+          <header>
+            <img src="src/assets/working.svg" alt="ícone de manhã" />
+            <strong>Em processamento</strong>
+          </header>
+
+          <!-- Exemplo -->
+          <table id="order-done" class="order">
+            <thead>
+              <tr>
+                <td>Nome / Nº da Casa</td>
+                <td>Cód. do Produto</td>
+                <td>Dt. de Retirada</td>
+                <td>Ações</td>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- <tr>
+                <td><span class="bold">Felipe Mikami</span>&nbsp;/ 213</td>
+                <td>PAS1232DFA</td>
+                <td>02/10/2024</td>
+                <td><button class="modalDetails">Detalhes</button></td>
+              </tr> -->
+            </tbody>
+           </table>
+        </section>
+
+        <section class="order-type">
+          <header>
+            <img src="src/assets/check.svg" alt="ícone de tarde" />
+            <strong>Retirado</strong>
+          </header>
+
+          <!-- Exemplo -->
+           <table id="order-working" class="order">
+            <thead>
+              <tr>
+                <td>Nome / Nº da Casa</td>
+                <td>Cód. do Produto</td>
+                <td>Dt. de Recebimento</td>
+                <td>Ações</td>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- <tr>
+                <td><span class="bold">Gabriel Cara</span>&nbsp;/ 74</td>
+                <td>HGD1231KS</td>
+                <td>11/11/2024</td>
+                <td><button id="btn-modal-take" class="modalTake">Retirar Item</button></td>
+              </tr> -->
+            </tbody>
+           </table>
+        </section>
+
+
+        <div class="actions">
+          <button id="btn-modal-take" class="btn btn-secondary">Retirar Encomenda</button>
+          <button id="btn-modal-create" class="btn btn-primary">Nova Encomenda</button>
+        </div>
+      </aside>
+
+      <div id="message"><p>Mercadoria cadastrada para ${ownerName}. Notificação enviada!</p></div>
+
+    </main>
+
+    <dialog id="modal-create" class="modal">
+      <header>
+        <h2>Cadastrar Encomenda</h2>
+        <p>Preencha os dados abaixo para realizar o cadastro.</p>
+      </header>
+      <form id="form-create">
+        <div class="input-wrapper">
+          <label for="owner-name">Nome do condómino</label>
+          <div class="input-container">
+            <img src="src/assets/person.svg" alt="ícone de uma pessoa">
+            <input
+              type="text"
+              id="owner-name"
+              name="owner-name"
+              placeholder="Maíra Souza"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="input-wrapper">
+          <label for="house-number">Nº da casa</label>
+          <div class="input-container">
+            <img src="src/assets/house.svg" alt="ícone de casa">
+            <input
+              type="number"
+              id="house-number"
+              name="house-number"
+              placeholder="74"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="input-wrapper">
+          <label for="identifier-code">Código de identificação</label>
+          <div class="input-container">
+            <img src="src/assets/barcode.svg" alt="ícone de uma pessoa">
+            <input
+              type="text"
+              id="identifier-code"
+              name="identifier-code"
+              placeholder="HGD1231KS"
+              required
+            />
+          </div>
+        </div>
+
+        <!-- <div class="flex mt-16 gap-16">
+          <div class="flex-1">
+            <div class="input-wrapper">
+              <label for="date">Data</label>
+              <input type="date" id="date" name="date" />
+            </div>
+          </div>
+          <div class="flex-1">
+            <div class="input-wrapper">
+              <label for="hour">Hora</label>
+              <input type="time" id="hour" name="hour" />
+            </div>
+          </div>
+        </div> -->
+      </form>
+      <button type="submit" form="form-create" id="btn-create" class="btn btn-primary">Cadastrar</button>
+    </dialog>
+
+    <dialog id="modal-take" class="modal">
+      <header>
+        <h2>Retirar Encomenda</h2>
+        <p>Preencha os dados abaixo para realizar a retirada da encomenda.</p>
+      </header>
+      <form id="form-take">
+        <div class="input-wrapper">
+          <label for="identifier-code">Código de identificação</label>
+          <div class="input-container">
+            <img src="src/assets/barcode.svg" alt="ícone de uma pessoa">
+            <input
+              type="text"
+              id="identifier-code"
+              name="identifier-code"
+              placeholder="HGD1231KS"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="input-wrapper">
+          <label for="password">Código de Segurança</label>
+          <div class="input-container">
+            <img src="src/assets/password.svg" alt="ícone de uma pessoa">
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="1234"
+              required
+            />
+          </div>
+        </div>
+      </form>
+      <button type="submit" form="form-take" id="btn-take" class="btn btn-primary">Retirar</button>
+    </dialog>
+
+  </body>
+</html>

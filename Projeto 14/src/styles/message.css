@@ -1,0 +1,44 @@
+#message {
+  position: absolute;
+  top: 3.2rem;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: max-content;
+
+  opacity: 0;
+
+  & p {
+    color: var(--text-color-darker);
+    font: 500 var(--ff-title-md);
+
+    background-color: #22c55e;
+
+    padding: 1.2rem 2rem;
+    border-radius: 1.2rem;
+
+    display: block;
+    margin-inline: auto;
+  }
+}
+
+.show {
+  animation: appear 5s ease forwards;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: translateY(-11rem);
+  }
+
+  10%, 90% {
+    opacity: 1;
+    transform: translateY(-5rem);
+  }
+
+  99%,
+  100% {
+    opacity: 0;
+  }
+}

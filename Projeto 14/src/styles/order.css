@@ -1,0 +1,123 @@
+#order {
+  margin-top: 3.2rem;
+
+  max-height: 60vh;
+  width: 100%;
+
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    width: 0.5rem; /* Espessura da barra de rolagem vertical */
+  }
+
+  &::-webkit-scrollbar:horizontal {
+    height: 0.5rem; /* Espessura da barra de rolagem horizontal */
+  }
+
+  &::-webkit-scrollbar-thumb,
+  &::-webkit-scrollbar-thumb:horizontal {
+    background-color: var(
+      --btn-background
+    ); /* Cor do "polegar" da barra de rolagem */
+    border-radius: 1.6rem;
+  }
+
+  &::-webkit-scrollbar-track,
+  &::-webkit-scrollbar-track:horizontal {
+    background-color: var(--border-base);
+  }
+
+  & .order-type {
+    background-color: var(--background-card);
+    border-radius: 1rem;
+
+    & + .order-type {
+      margin-top: 1.2rem;
+    }
+
+    & header {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      padding: 1.2rem 2rem;
+
+      border-bottom: 1px solid var(--border-dark);
+
+      & img {
+        width: 1.8rem;
+        height: 1.8rem;
+      }
+
+      & strong {
+        font: 700 var(--ff-title-md);
+        color: var(--text-color-primary);
+        margin-right: auto;
+      }
+
+      & span {
+        font: 700 var(--ff-title-md);
+        color: var(--text-color-secondary);
+      }
+    }
+
+    & .order {
+      width: 100%;
+      padding: 2rem;
+
+      & thead tr td {
+        font: 700 var(--ff-text-sm);
+        color: var(--text-color-primary);
+      }
+
+      & tr td {
+        padding: 1.6rem 1.2rem;
+        border-bottom: 1px solid var(--border-dark);
+        
+        text-align: center;
+      }
+
+      & tbody tr td {
+        font: 400 var(--ff-text-xsm);
+        color: var(--text-color-secondary);
+
+        & .bold {
+          color: var(--text-color-primary);
+        }
+
+        & button {
+          font: inherit;
+          color: var(--text-color-tertiary);
+
+          &:hover {
+            color: var(--text-color-primary);
+            text-decoration: underline;
+          }
+        }
+      }
+
+      & tr td:first-child {
+        text-align: start;
+      }
+
+      & tr td:last-child {
+        text-align: end;
+      }
+    }
+  }
+
+  & .actions {
+    position: fixed;
+    bottom: 3.2rem;
+    right: 3.2rem;
+
+    display: flex;
+    gap: 1.6rem;
+  }
+
+  @media (width <= 768px) {
+    & .schedule-period .period li {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+}

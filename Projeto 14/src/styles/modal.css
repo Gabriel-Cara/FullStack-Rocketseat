@@ -1,0 +1,57 @@
+:modal {
+  position: absolute;
+  border: none;
+  border-radius: 1.2rem;
+
+  margin: auto;
+  padding: 4rem;
+  background-color: var(--background-card);
+
+  display: flex;
+  flex-direction: column;
+  gap: 2.8rem;
+
+  & form {
+    & .input-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      align-items: flex-start;
+
+      & + .input-wrapper {
+        margin-top: 1.6rem;
+      }
+
+      & label {
+        font: 700 var(--ff-title-sm);
+        color: var(--text-color-primary);
+      }
+
+      & .input-container {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 0.8rem;
+        width: 100%;
+
+        border: 1px solid var(--border-base);
+        border-radius: 0.8rem;
+
+        padding: 1.2rem;
+
+        font: 400 var(--ff-text-sm);
+        color: var(--text-color-secondary);
+
+        & > input {
+          all: unset;
+        }
+      }
+    }
+  }
+
+  @media (width <= 768px ) {
+    & form .flex {
+      flex-direction: column;
+    }
+  }
+}

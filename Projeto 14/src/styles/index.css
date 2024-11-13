@@ -1,0 +1,23 @@
+@import url("./global.css");
+@import url("./header.css");
+@import url("./order.css");
+@import url("./modal.css");
+@import url("./message.css");
+
+#app {
+  max-width: 87.1rem;
+  padding: 8rem;
+
+  display: grid;
+  margin-inline: auto;
+
+  position: relative;
+
+  @media (width <= 768px) {
+    & {
+      padding: 2rem;
+    }
+  }
+}
+
+
