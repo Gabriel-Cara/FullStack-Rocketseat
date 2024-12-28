@@ -1,0 +1,131 @@
+/* BASES */
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: url(../assets/background.svg) no-repeat center / cover var(--bg-primary);
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  display: block;
+  background-color: #020202;
+  width: 100vw;
+  height: 100vh;
+  opacity: .85;
+}
+
+:root {
+  font-size: 62.5%;
+
+  /* COLORS TEXT */
+  --tc-primary: #FFFFFF;
+  --tc-secondary: #C7C9CC;
+  --tc-tertiary: linear-gradient(90deg, #C7C9CC 0%, #3D3D3D 100%);
+  --tc-highlight: #C58DE7;
+  --tc-active: #030203;
+
+  /* COLORS BACKGROUND */
+  --bg-primary: #020202;
+  --bg-secondary: #111012;
+  --bg-tertiary: #24222E;
+
+  /* COLORS BORDER */
+  --bd-highlight: linear-gradient(91deg, #77C0AF 0%, #D1DC97 14.84%, #E9A9B3 32.15%, #D586E0 65.79%, #91A1FA 84.58%);
+
+  /* FONT FAMILIES */
+  --ff-sora: 'Sora', sans-serif;
+  --ff-roboto-mono: 'Roboto Mono', monospace;
+  --ff-roboto-flex: 'Roboto Flex', sans-serif;
+
+  /* FONT SIZES */
+  --fs-xsm: 1.2rem;
+  --fs-sm: 1.4rem;
+  --fs-md: 1.6rem;
+  --fs-lg: 2rem;
+  --fs-xl: 3.2rem;
+  --fs-2xl: 4rem;
+  --fs-4xl: 7.2rem;
+
+  /* FONT WEIGHTS */
+  --fw-medium: 500;
+  --fw-bold: 700;
+  --fw-extra-bold: 900;
+
+  /* FONTS */
+  --tt-title: var(--fw-bold) var(--fs-xl) / 3.1rem var(--ff-sora);
+  --tt-paragraph: var(--fw-medium) var(--fs-xsm) / 150% var(--ff-roboto-flex);
+}
+
+/* UTILS */
+.flex {
+  display: flex;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+/* APP */
+#app {
+  position: relative;
+
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10.8rem;
+
+  padding: 7.8rem 13.4rem;
+}
+
+.logo {
+  position: absolute;
+  top: 7.8rem;
+  left: 13.4rem;
+
+  gap: 1.2rem;
+
+  & span {
+    color: var(--tc-primary);
+    font: var(--tt-title);
+  }
+}
+
+.hidden {
+  display: none !important;
+}
+
+@media (width < 1024px) {
+  #app {
+    flex-direction: column;
+    gap: 4.8rem;
+
+    padding: 4.6rem 3.6rem;
+
+    & .logo {
+      position: initial;
+    }
+  }
+}

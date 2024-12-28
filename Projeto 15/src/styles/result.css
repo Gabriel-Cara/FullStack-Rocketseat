@@ -1,0 +1,89 @@
+#result {
+  width: max-content;
+  max-width: 50rem;
+
+  justify-content: center;
+  align-items: center;
+
+  & h3 {
+    font: var(--tt-title);
+    color: var(--tc-primary);
+    font-size: var(--fs-lg);
+    font-family: var(--ff-roboto-flex);
+
+    margin-bottom: 0.2rem;
+  }
+
+  & p {
+    font: var(--tt-paragraph);
+    color: var(--tc-secondary);
+    font-size: var(--fs-md);
+  }
+
+  & .cards {
+    margin-top: 4rem;
+
+    gap: 1.8rem;
+
+    & .card {
+      font: var(--tt-paragraph);
+      color: var(--tc-highlight);
+      font-size: var(--fs-2xl);
+      font-family: var(--ff-roboto-mono);
+      border-radius: 2.8rem;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      padding: .5rem 1.2rem;
+
+      &.active {
+        color: var(--tc-active);
+        background-color: var(--tc-highlight);
+
+        animation: appear 1s ease forwards;
+      }
+    }
+  }
+
+  & button {
+    position: relative;
+    border: 1px solid var(--bg-secondary);
+    outline: none;
+    width: 100%;
+
+    justify-content: center;
+    gap: 0.8rem;
+
+    font: var(--tt-title);
+    font-size: var(--fs-md);
+    font-family: var(--ff-roboto-flex);
+    color: var(--tc-primary);
+
+    background: var(--bg-tertiary);
+    border-radius: .8rem;
+
+    padding: 1.6rem;
+    margin-top: 5.6rem;
+
+    transition: all .5s ease;
+
+    &:hover {
+      background-color: var(--bg-secondary);
+      border-image-source: var(--bd-highlight); /* Gradiente na borda */
+      border-radius: .8rem;
+      border-image-slice: 1; /* Faz o gradiente preencher toda a borda */
+    }
+  }
+}
+
+@keyframes appear {
+  0% {
+    transform: scale(0) opacity(0);
+  }
+
+  100% {
+    transform: scale(1) opacity(1);
+  }
+}

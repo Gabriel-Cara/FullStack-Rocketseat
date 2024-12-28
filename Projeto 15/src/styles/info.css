@@ -1,0 +1,43 @@
+#info {
+  width: max-content;
+  max-width: 50rem;  
+
+  & > span {
+    font: var(--tt-title);
+    font-family: var(--ff-roboto-mono);
+    font-size: var(--fs-md);
+
+    background: var(--tc-tertiary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  & h1 {
+    font: var(--tt-title);
+    color: var(--tc-primary);
+    font-size: var(--fs-4xl);
+    line-height: 130%;
+    white-space: nowrap;
+
+    margin-block: 1.2rem 3.8rem;
+  }
+
+  & .question {
+    align-items: flex-start;
+    gap: .8rem;
+
+    & answer {
+      font: var(--tt-paragraph);
+      color: var(--tc-secondary);
+      
+      & span {
+        font-size: var(--fs-sm);
+        color: var(--tc-highlight);
+      }
+    }
+  }
+
+  & .question + .question {
+    margin-top: 3.6rem;
+  }
+}

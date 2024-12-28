@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto+Mono:wght@700&family=Sora:wght@700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Favicon -->
+    <link
+      rel="shortcut icon"
+      href="./src/assets/favicon.svg"
+      type="image/x-icon"
+    />
+    <title>Sorteador de Números</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="./src/styles/index.css" />
+
+    <!-- Scripts -->
+     <script src="./src/scripts/index.js" defer ></script>
+  </head>
+  <body>
+    <div id="app">
+      <div class="logo flex align-center">
+        <img src="./src/assets/favicon.svg" alt="favicon" />
+        <span class="uppercase">Numbers</span>
+      </div>
+
+      <aside id="info" class="flex flex-column flex-1">
+        <span class="uppercase">Online - Gratuito</span>
+        <h1 class="uppercase">Sorteador<br />de Números</h1>
+
+        <div class="question flex">
+          <img src="./src/assets/person.svg" alt="ícone de pessoa" />
+          <answer class="flex flex-column">
+            <span>Como funciona o sorteador de números?</span>
+            O sorteador utiliza um algoritmo de geração aleatória para criar
+            números dentro do intervalo especificado pelo usuário.
+          </answer>
+        </div>
+        <div class="question flex">
+          <img src="./src/assets/person.svg" alt="ícone de pessoa" />
+          <answer class="flex flex-column">
+            <span>Posso escolher o intervalo dos números?</span>
+            Sim, você pode definir os valores mínimo e máximo para o intervalo
+            dos números sorteados.
+          </answer>
+        </div>
+      </aside>
+
+      <aside id="raffle" class="flex flex-column flex-1">
+        <h3 class="uppercase">Quero sortear:</h3>
+        <p>
+          Defina o intervalo e a quantidade de números, clique em
+          <i><strong>Sortear</strong></i> e veja os resultados na tela. É rápido
+          e fácil!
+        </p>
+
+        <form class="flex" action="">
+          <div class="input-wrapper flex flex-column">
+            <label class="uppercase" for="quantity">Números</label>
+            <input type="number" name="quantity" id="quantity" min="0" />
+          </div>
+
+          <div class="input-wrapper flex flex-column">
+            <label class="uppercase" for="from">De</label>
+            <input type="number" name="from" id="from" min="0" />
+          </div>
+
+          <div class="input-wrapper flex flex-column">
+            <label class="uppercase" for="to">De</label>
+            <input type="number" name="to" id="to" min="0" />
+          </div>
+        </form>
+
+        <button type="submit" class="uppercase flex align-center">
+          Sortear <img src="./src/assets/arrow.svg" alt="" />
+        </button>
+      </aside>
+
+      <aside id="result" class="flex flex-column flex-1 hidden">
+        <h3 class="uppercase">Resultado do sorteio:</h3>
+        <p>
+          1º Resultado
+        </p>
+        <div class="cards flex">
+          <div class="card flex-1 active">
+            <span>23</span>
+          </div>
+          <div class="card flex-1">
+            <span>48</span>
+          </div>
+        </div>
+
+        <button type="submit" class="uppercase flex align-center flex-1">
+          Sortear novamente<img src="./src/assets/return.svg" alt="" />
+        </button>
+      </aside>
+    </div>
+  </body>
+</html>
